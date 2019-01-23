@@ -34,13 +34,24 @@ Run this commands with console:
 4. docker exec -it symfony-php-fpm sh -c "bin/console doctrine:migration:migrate" -d
 5. docker exec -it symfony-php-fpm sh -c "./vendor/bin/phpunit" -d
 
-- Use Postman for testing REST api
+- Use Postman for testing REST api or you can use following commands in console:
+
 POST example
- - **Add url and generate id:** curl --data "url=http://http://www.spiegel.de?int=1" http://localhost:8082/api/url
+ - **Add url and generate id:** 
+ curl --data "url=http://http://www.spiegel.de?int=1" http://localhost:8082/api/url
+ 
 GET example
- - **Fetch all url-s and id-s:** curl -X GET http://localhost:8082/api/url
- - **Fetch list of url-s and id-s:** curl -X GET http://localhost:8082/api/urls?id=1,2
+ - **Fetch all url-s and id-s:** 
+ curl -X GET http://localhost:8082/api/url
+ 
+ - **Fetch list of url-s and id-s:** 
+ curl -X GET http://localhost:8082/api/urls?id=1,2
+ 
 PUT example
- - **Update url and create and set id:** curl -X PUT -d "url=http://www.persona.de/fuer-bewerber/" http://localhost:8082/api/url/1
+ - **Update url and create and set id:** 
+ curl -X PUT -d "url=http://www.persona.de/fuer-bewerber/" http://localhost:8082/api/url/1
+ 
 DELETE example
- - **Delete url from database:** curl -X DELETE http://localhost:8082/api/url/1
+ - **Delete url from database:** 
+ curl -X DELETE http://localhost:8082/api/url/1
+ 
