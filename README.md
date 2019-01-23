@@ -34,3 +34,9 @@ Run this commands with console:
 4. docker exec -it symfony-php-fpm sh -c "bin/console doctrine:migration:migrate" -d
 5. docker exec -it symfony-php-fpm sh -c "./vendor/bin/phpunit" -d
 
+- Use Postman for testing REST api
+POST example
+ - **Add url and generate id** curl --data "url=http://http://www.spiegel.de?int=1" http://localhost:8082/api/url
+GET example
+ - **Fetch all url-s and id-s** curl -X GET http://localhost:8082/api/url
+ - **Fetch list of url-s and id-s** curl -X GET http://localhost:8082/api/urls?id=1,2
