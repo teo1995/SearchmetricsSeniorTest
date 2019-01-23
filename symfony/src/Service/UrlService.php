@@ -40,14 +40,15 @@ class UrlService
         return $urlId;
     }
 
-    public function updateUrl($id,$url,$urlId) : UrlId
+    public function updateUrl($id,$url) : UrlId
     {
         $urlId_ = $this->urlRepository->findOneById($id);
         if(empty($urlId_)){
             return $urlId_;
         }
+		$generatedId = (new PhpUrlIdGeneratorMK())->generate($url);
         $urlId_->setUrl($url);
-        $urlId_->setUrlID($urlId);
+        $urlId_->setUrlID($generatedId);
         $this->urlRepository->save($urlId_);
         return $urlId_;
     }

@@ -69,8 +69,7 @@ class UrlControllerREST extends FOSRestController
     public function putUrl($id, Request $request) : View
     {
         $url = $request->get('url');
-        $urlId = $request->get('idUrl');
-        $urlId_ = $this->urlService->updateUrl($id, $url, $urlId);
+        $urlId_ = $this->urlService->updateUrl($id, $url);
         if(empty($urlId_)){
             return View::create($urlId_, Response::HTTP_NOT_FOUND);
         }
