@@ -24,7 +24,13 @@ class UrlControllerREST extends FOSRestController
 
     public function __construct(UrlService $urlService)
     {
-        $this->urlService = $urlService;
+
+        if($this->urlService) {
+            $this->urlService = $urlService;
+        }
+
+        //this is my comment
+        echo("hello");
     }
 
     /**
